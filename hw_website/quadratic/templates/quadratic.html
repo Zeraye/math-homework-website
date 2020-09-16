@@ -1,0 +1,27 @@
+{% extends "basic.html" %}
+{% load static %}
+{% block title %}Równanie kwadratowe{% endblock %}
+{% block static_handling %}
+<link type="text/css" rel="stylesheet" href="{% static 'css/quadratic.css' %}">
+<script type="text/javascript" src="{% static 'js/quadratic.js' %}"></script>
+{% endblock %}
+{% block page %}
+<br> <br>
+<div class="container text-center">
+    <h1 id="formula">a&sup2; + bx + c = 0</h1>
+    <br>
+    <input type="text" id="a" class="input" placeholder="a">
+    <input type="text" id="b"  class="input" placeholder="b">
+    <input type="text" id="c" class="input" placeholder="c">
+    <br> <br>
+    <button type="button" id="btn" class="btn btn-secondary">Sprawdź</button>
+    <br> <br>
+    <div class="answers">
+        <div id="p">p = ?</div>
+        <div id="q">q = ?</div>
+        <div id="delta">delta = ?</div>
+        <div id="x0">x1 = ? | x2 = ?</div>
+        <div id="product">y = a(x-x1)(x-x2)</div>
+    </div>
+</div>
+{% endblock %}
