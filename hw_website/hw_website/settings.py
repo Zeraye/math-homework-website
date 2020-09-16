@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,9 +25,9 @@ TEMPLATE_DIR = Path.joinpath(BASE_DIR, 'templates')
 SECRET_KEY = 'beoxu^01q3iudjto%bag3!rql86l$vbs_0!%e3e#h&3uv$g8h@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['zeraye.herokuapp.com']
 
 
 # Application definition
@@ -121,3 +122,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [Path.joinpath(BASE_DIR, 'static')]
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
