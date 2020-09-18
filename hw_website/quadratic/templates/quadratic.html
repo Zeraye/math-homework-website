@@ -6,22 +6,25 @@
 <script type="text/javascript" src="{% static 'js/quadratic.js' %}"></script>
 {% endblock %}
 {% block page %}
-<br> <br>
 <div class="container text-center">
-    <h1 id="formula">a&sup2; + bx + c = 0</h1>
     <br>
-    <input type="text" id="a" class="input" placeholder="a">
-    <input type="text" id="b"  class="input" placeholder="b">
-    <input type="text" id="c" class="input" placeholder="c">
-    <br> <br>
-    <button type="button" id="btn" class="btn btn-secondary">Sprawdź</button>
-    <br> <br>
+    <h1 id="formula">&fnof;(x) = {{equat|safe}}</h1>
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input class="input" type="text" name="a" placeholder="a" onfocus="this.placeholder=''" onblur="this.placeholder = 'a'" maxlength="3">
+        <input class="input" type="text" name="b" placeholder="b" onfocus="this.placeholder=''" onblur="this.placeholder = 'b'" maxlength="3">
+        <input class="input" type="text" name="c" placeholder="c" onfocus="this.placeholder=''" onblur="this.placeholder = 'c'" maxlength="3">
+        <br> <br>
+        <button type="submit" id="btn-check" class="btn btn-secondary">Sprawdź</button>
+        <br> <br>
+    </form>
     <div class="answers">
-        <div id="p">p = ?</div>
-        <div id="q">q = ?</div>
-        <div id="delta">delta = ?</div>
-        <div id="x0">x1 = ? | x2 = ?</div>
-        <div id="product">y = a(x-x1)(x-x2)</div>
+        <p>x&#8321; = {{x1}}</p>
+        <p>x&#8322; = {{x2}}</p>
+        <p>p = {{p}}</p>
+        <p>q = {{q}}</p>
+        <p>&#8710; = {{delta}}</p>
     </div>
 </div>
 {% endblock %}

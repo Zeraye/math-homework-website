@@ -24,9 +24,9 @@ TEMPLATE_DIR = Path.joinpath(BASE_DIR, 'templates')
 SECRET_KEY = 'beoxu^01q3iudjto%bag3!rql86l$vbs_0!%e3e#h&3uv$g8h@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
