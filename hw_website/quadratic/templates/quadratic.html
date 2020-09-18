@@ -6,15 +6,15 @@
 <script type="text/javascript" src="{% static 'js/quadratic.js' %}"></script>
 {% endblock %}
 {% block page %}
-<div class="container text-center">
+<div class="container text-center main">
     <br>
     <h1 id="formula">&fnof;(x) = {{equat|safe}}</h1>
     <br>
     <form action="" method="POST">
         {% csrf_token %}
-        <input class="input" type="text" name="a" placeholder="a" onfocus="this.placeholder=''" onblur="this.placeholder = 'a'" maxlength="3">
-        <input class="input" type="text" name="b" placeholder="b" onfocus="this.placeholder=''" onblur="this.placeholder = 'b'" maxlength="3">
-        <input class="input" type="text" name="c" placeholder="c" onfocus="this.placeholder=''" onblur="this.placeholder = 'c'" maxlength="3">
+        <input type="text" name="a" placeholder="a" onfocus="this.placeholder=''" onblur="this.placeholder = 'a'" maxlength="3">
+        <input type="text" name="b" placeholder="b" onfocus="this.placeholder=''" onblur="this.placeholder = 'b'" maxlength="3">
+        <input type="text" name="c" placeholder="c" onfocus="this.placeholder=''" onblur="this.placeholder = 'c'" maxlength="3">
         <br> <br>
         <button type="submit" id="btn-check" class="btn btn-secondary">Sprawdź</button>
         <br> <br>
