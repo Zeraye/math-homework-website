@@ -11,7 +11,7 @@ h1
 
 .main
 {
-    height: 90vh;
+    height: 80vh;
 }
 
 #btn-check
@@ -33,7 +33,20 @@ input[type=text]
     margin-left: 1rem;
 }
 
-.answers
+.answer
 {
     font-size: 3rem;
+    border-right: 2px solid grey
+}
+
+.answer-last
+{
+    font-size: 3rem;
+}
+
+.row
+{
+    margin: auto;
+    border: 2px solid grey;
+    width: 90vw;
 }

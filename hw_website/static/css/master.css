@@ -1,12 +1,14 @@
-nav
+.nav-central
 {
-    height: 10vh;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .navbar-brand
 {
     display: block;
     font-family: 'Lato', sans-serif;
     font-size: 3rem !important;
+    margin-right: 2.5rem;
 }
 
 .navbar-nav
@@ -15,7 +17,17 @@ nav
     font-size: 2rem;
 }
 
+.nav-link
+{
+    margin-right: 2rem;
+}
+
+.navbar-brand:hover
+{
+    color: #687682!important;
+}
+
 .nav-link:hover
 {
-    color: #2dad10!important;
+    color: #687682!important;
 }

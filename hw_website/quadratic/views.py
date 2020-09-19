@@ -5,20 +5,31 @@ from fractions import Fraction
 
 
 def quadratic_solver(a, b, c):
+    approx = 3
     if a != 0:
         delta = b**2-4*a*c
+        if delta % 1 == 0: delta = int(delta)
         p = -b/(2*a)
+        if p % 1 == 0: p = int(p)
+        else: p = round(p, approx)
         q = -delta/(4*a)
+        if q % 1 == 0: q = int(q)
+        else: q = round(q, approx)
         if delta >= 0:
             root_of_delta = delta**(1/2)
             x1 = (-b+root_of_delta)/(2*a)
+            if x1 % 1 == 0: x1 = int(x1)
+            else: x1 = round(x1, approx)
             x2 = (-b-root_of_delta)/(2*a)
+            if x2 % 1 == 0: x2 = int(x2)
+            else: x2 = round(x2, approx)
         else:
-            root_of_delta = x1 = x2 = "brak"
+            x1 = x2 = "brak"
     elif b != 0:
-        delta = root_of_delta = p = q = "brak"
-        x1 = x2 = -c/b
-    else: delta = root_of_delta = p = q = x1 = x2 = "brak"
+        x1 = -c/b
+        if x1 % 1 == 0: x1 = int(x1)
+        else: x1 = round(x1, approx)
+    else: return str(c)
 
     equat_arr = []
 
@@ -41,7 +52,8 @@ def quadratic_solver(a, b, c):
     for i in range(len(equat_arr)):
         equat += equat_arr[i]
 
-    return equat, x1, x2, p, q, delta
+    if a == 0 and b != 0: return equat, str(x1)
+    else: return equat, str(x1), str(x2), str(p), str(q), str(delta)
 
 
 def quadratic(request):
@@ -57,14 +69,32 @@ def quadratic(request):
             list = quadratic_solver(int(a), int(b), int(c))
         except:
             return render(request, 'quadratic.html')
-        context = {
-            'equat': list[0],
-            'x1': list[1],
-            'x2': list[2],
-            'p': list[3],
-            'q': list[4],
-            'delta': list[5]
-        }
+
+        try:
+            context = {
+                'equat': list[0],
+                'x1': '<p>x&#8321; = ' + list[1] + '</p>',
+                'x2': '<p>x&#8322; = ' + list[2] + '</p>',
+                'p': '<p>p = ' + list[3] + '</p>',
+                'q': '<p>q = ' + list[4] + '</p>',
+                'delta': '<p>&#8710; = ' + list[5] + '</p>'
+                # 'equat': list[0],
+                # 'x1': list[1],
+                # 'x2': list[2],
+                # 'p': list[3],
+                # 'q': list[4],
+                # 'delta': list[5],
+            }
+        except:
+            try:
+                context = {
+                    'equat': list[0],
+                    'x1': '<p>x = ' + list[1] + '</p>'
+                }
+            except:
+                context = {
+                    'equat': list,
+                }
 
         return render(request, 'quadratic.html', context=context)
 
