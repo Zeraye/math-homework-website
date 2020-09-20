@@ -7,7 +7,7 @@
 {% endblock %}
 {% block page %}
 <div class="w-100 text-center main">
-    <br> <br>
+    <br>
     <h1 id="formula">&fnof;(x) = {{equat|safe}}</h1>
     <br> <br>
     <form action="" method="POST">
@@ -15,16 +15,16 @@
         <input type="text" name="a" placeholder="a" onfocus="this.placeholder=''" onblur="this.placeholder = 'a'" maxlength="3">
         <input type="text" name="b" placeholder="b" onfocus="this.placeholder=''" onblur="this.placeholder = 'b'" maxlength="3">
         <input type="text" name="c" placeholder="c" onfocus="this.placeholder=''" onblur="this.placeholder = 'c'" maxlength="3">
-        <br> <br> <br> <br>
+        <br> <br> <br>
         <button type="submit" id="btn-check" class="btn btn-secondary">Sprawdź</button>
-        <br> <br> <br> <br>
+        <br> <br>
     </form>
     <div class="row">
         <div class="col answer">{{x1|safe}}</div>
         <div class="col answer">{{x2|safe}}</div>
         <div class="col answer">{{p|safe}}</div>
         <div class="col answer">{{q|safe}}</div>
-        <div class="col answer-last">{{delta|safe}}</div>
+        <div class="col answer">{{delta|safe}}</div>
     </div>
 </div>
 {% endblock %}

@@ -32,7 +32,6 @@ def quadratic_solver(a, b, c):
     else: return str(c)
 
     equat_arr = []
-
     if a != 0:
         if a == 1: equat_arr.append("x&sup2;")
         elif a == -1: equat_arr.append("-x&sup2;")
@@ -89,7 +88,7 @@ def quadratic(request):
             try:
                 context = {
                     'equat': list[0],
-                    'x1': '<p>x = ' + list[1] + '</p>'
+                    'p': '<p>x = ' + list[1] + '</p>'
                 }
             except:
                 context = {

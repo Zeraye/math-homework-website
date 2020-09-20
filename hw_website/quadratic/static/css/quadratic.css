@@ -11,7 +11,7 @@ h1
 
 .main
 {
-    height: 80vh;
+    margin: 0px;
 }
 
 #btn-check
@@ -36,17 +36,16 @@ input[type=text]
 .answer
 {
     font-size: 3rem;
-    border-right: 2px solid grey
-}
-
-.answer-last
-{
-    font-size: 3rem;
 }
 
 .row
 {
     margin: auto;
-    border: 2px solid grey;
     width: 90vw;
+}
+
+.break
+{
+  flex-basis: 100%;
+  height: 0;
 }
