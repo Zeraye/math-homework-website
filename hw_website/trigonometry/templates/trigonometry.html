@@ -1,0 +1,30 @@
+{% extends "basic.html" %}
+{% load static %}
+{% block title %}Trygonometria{% endblock %}
+{% block static_handling %}
+<link type="text/css" rel="stylesheet" href="{% static 'css/trigonometry.css' %}">
+<script type="text/javascript" src="{% static 'js/trigonometry.js' %}"></script>
+{% endblock %}
+{% block page %}
+<div class="w-100 text-center main">
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" name="angle" placeholder="&alpha;(&deg;)" onfocus="this.placeholder=''" onblur="this.placeholder = '&alpha;(&deg;)'" maxlength="3">
+        <input type="text" name="sin" placeholder="sin&alpha;" onfocus="this.placeholder=''" onblur="this.placeholder = 'sin&alpha;'" maxlength="3">
+        <input type="text" name="cos" placeholder="cos&alpha;" onfocus="this.placeholder=''" onblur="this.placeholder = 'cos&alpha;'" maxlength="3">
+        <input type="text" name="tan" placeholder="tan&alpha;" onfocus="this.placeholder=''" onblur="this.placeholder = 'tan&alpha;'" maxlength="3">
+        <input type="text" name="cot" placeholder="cot&alpha;" onfocus="this.placeholder=''" onblur="this.placeholder = 'cot&alpha;'" maxlength="3">
+        <br> <br> <br>
+        <button type="submit" id="btn-check" class="btn btn-secondary">Sprawdź</button>
+        <br> <br>
+    </form>
+    <div class="row w-100">
+        <div class="col col-lg col-md-12 answer">{{angle|safe}}</div>
+        <div class="col col-lg col-md-12 answer">{{sin|safe}}</div>
+        <div class="col col-lg col-md-12 answer">{{cos|safe}}</div>
+        <div class="col col-lg col-md-12 answer">{{tan|safe}}</div>
+        <div class="col col-lg col-md-12 answer">{{cot|safe}}</div>
+    </div>
+</div>
+{% endblock %}

@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('quadratic/', include('quadratic.urls', namespace='quadratic')),
+    path('trigonometry/', include('trigonometry.urls', namespace='trigonometry'))
 ]
