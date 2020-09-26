@@ -7,10 +7,10 @@
 {% endblock %}
 {% block page %}
 <div class="w-100 text-center main">
-    <br>
+    <br> <br> <br> <br>
     <form action="" method="POST">
         {% csrf_token %}
-        <input type="text" name="angle" placeholder="&alpha;(&deg;)" onfocus="this.placeholder=''" onblur="this.placeholder = '&alpha;(&deg;)'" maxlength="3">
+        <input type="text" name="angle" placeholder="&alpha;&deg;" onfocus="this.placeholder=''" onblur="this.placeholder = '&alpha;(&deg;)'" maxlength="3">
         <input type="text" name="sin" placeholder="sin&alpha;" onfocus="this.placeholder=''" onblur="this.placeholder = 'sin&alpha;'" maxlength="3">
         <input type="text" name="cos" placeholder="cos&alpha;" onfocus="this.placeholder=''" onblur="this.placeholder = 'cos&alpha;'" maxlength="3">
         <input type="text" name="tan" placeholder="tan&alpha;" onfocus="this.placeholder=''" onblur="this.placeholder = 'tan&alpha;'" maxlength="3">
